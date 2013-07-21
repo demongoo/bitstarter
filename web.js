@@ -8,6 +8,9 @@ app.get('/', function(request, response) {
   response.send(buf.toString('utf-8'));
 });
 
+app.use('/img', express.static(__dirname + "/img"));
+//app.use(express.static(__dirname + '/img'));
+
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
